@@ -1,4 +1,6 @@
-﻿namespace Assignment_5
+﻿using Assignment_5.Class;
+
+namespace Assignment_5
 {
     internal class Program
     {
@@ -25,6 +27,16 @@
             //A: -Private fields hide the data from direct access.
             //   -Public properties control access to the data.
             //   -Properties can validate values before storing them.
+            #endregion
+
+            #region Question03
+            //DeliveryAddress address01 = new DeliveryAddress("Alex" , "Smooha" , 5);
+            //DeliveryAddress address02 = address01;
+            //address02.City = "Cairo";
+            //address02.Street = "Octopar";
+            //address02.BuildingNumber = 4;
+            //Console.WriteLine(address01.GetFullAddress());
+            //Console.WriteLine(address02.GetFullAddress());
             #endregion
         }
     }
