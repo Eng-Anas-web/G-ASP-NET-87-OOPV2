@@ -30,13 +30,175 @@ namespace Assignment_5
             #endregion
 
             #region Question03
-            //DeliveryAddress address01 = new DeliveryAddress("Alex" , "Smooha" , 5);
-            //DeliveryAddress address02 = address01;
-            //address02.City = "Cairo";
-            //address02.Street = "Octopar";
-            //address02.BuildingNumber = 4;
-            //Console.WriteLine(address01.GetFullAddress());
-            //Console.WriteLine(address02.GetFullAddress());
+       
+            DeliveryCenter center = new DeliveryCenter();
+
+            Console.WriteLine("Enter Shipment 1 Data");
+
+            Console.Write("Tracking Code: ");
+            string trackingCode1 = Console.ReadLine();
+
+            Console.Write("Description: ");
+            string description1 = Console.ReadLine();
+
+            Console.Write("Weight: ");
+            double weight1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Delivery Fee: ");
+            decimal fee1 = decimal.Parse(Console.ReadLine());
+
+            Console.Write("City: ");
+            string city1 = Console.ReadLine();
+
+            Console.Write("Street: ");
+            string street1 = Console.ReadLine();
+
+            Console.Write("Building Number: ");
+            int building1 = int.Parse(Console.ReadLine());
+
+            DeliveryAddress address1 =
+                new DeliveryAddress(city1, street1, building1);
+
+            Shipment shipment1 =
+                new Shipment(
+                    trackingCode1,
+                    description1,
+                    weight1,
+                    fee1,
+                    address1
+                );
+
+            if (center.AddShipment(shipment1))
+            {
+                Console.WriteLine("Shipment added successfully.");
+            }
+
+
+           
+            Console.WriteLine("Enter Shipment 2 Data");
+
+            Console.Write("Tracking Code: ");
+            string trackingCode2 = Console.ReadLine();
+
+            Console.Write("Description: ");
+            string description2 = Console.ReadLine();
+
+            Console.Write("Weight: ");
+            double weight2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Delivery Fee: ");
+            decimal fee2 = decimal.Parse(Console.ReadLine());
+
+            Console.Write("City: ");
+            string city2 = Console.ReadLine();
+
+            Console.Write("Street: ");
+            string street2 = Console.ReadLine();
+
+            Console.Write("Building Number: ");
+            int building2 = int.Parse(Console.ReadLine());
+
+            DeliveryAddress address2 =
+                new DeliveryAddress(city2, street2, building2);
+
+            Shipment shipment2 =
+                new Shipment(
+                    trackingCode2,
+                    description2,
+                    weight2,
+                    fee2,
+                    address2
+                );
+
+            if (center.AddShipment(shipment2))
+            {
+                Console.WriteLine("Shipment added successfully.");
+            }
+
+
+            Console.WriteLine("\nEnter Shipment 3 Data");
+
+            Console.Write("Tracking Code: ");
+            string trackingCode3 = Console.ReadLine();
+
+            Console.Write("Description: ");
+            string description3 = Console.ReadLine();
+
+            Console.Write("Weight: ");
+            double weight3 = double.Parse(Console.ReadLine());
+
+            Console.Write("Delivery Fee: ");
+            decimal fee3 = decimal.Parse(Console.ReadLine());
+
+            Console.Write("City: ");
+            string city3 = Console.ReadLine();
+
+            Console.Write("Street: ");
+            string street3 = Console.ReadLine();
+
+            Console.Write("Building Number: ");
+            int building3 = int.Parse(Console.ReadLine());
+
+            DeliveryAddress address3 =
+                new DeliveryAddress(city3, street3, building3);
+
+            Shipment shipment3 =
+                new Shipment(
+                    trackingCode3,
+                    description3,
+                    weight3,
+                    fee3,
+                    address3
+                );
+
+            if (center.AddShipment(shipment3))
+            {
+                Console.WriteLine("Shipment added successfully.");
+            }
+
+
+
+            Console.WriteLine("--- All Shipments ---");
+
+            center[0].PrintShipment();
+            center[1].PrintShipment();
+            center[2].PrintShipment();
+
+
+            Console.Write("\nEnter a tracking code to search: ");
+            string searchCode = Console.ReadLine();
+
+            Shipment result = center[searchCode];
+
+            if (!string.IsNullOrWhiteSpace(result.TrackingCode))
+            {
+                Console.WriteLine(
+                    $"Shipment found: {result.TrackingCode} - {result.Description}"
+                );
+            }
+            else
+            {
+                Console.WriteLine("Shipment not found.");
+            }
+
+
+            Console.WriteLine("--- Struct Copy Test ---");
+
+            DeliveryAddress originalAddress =
+                new DeliveryAddress("Cairo", "Tahrir Street", 15);
+
+            DeliveryAddress copiedAddress = originalAddress;
+
+            copiedAddress.Street = "Makram Ebeid Street";
+            copiedAddress.BuildingNumber = 20;
+
+            Console.WriteLine(
+                $"Original Address: {originalAddress.GetFullAddress()}"
+            );
+
+            Console.WriteLine(
+                $"Copied Address: {copiedAddress.GetFullAddress()}"
+            );
             #endregion
         }
     }
